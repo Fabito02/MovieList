@@ -34,11 +34,14 @@ input[type = 'button'] {
     color: white;
     padding: 8px 10px;
     font-weight: bold;
-    transition: all 0.5s;
+    transition: background-color 0.5s ease, transform 0.2s ease;
 }
 input[type = 'button']:hover {
     background-color: #252525;
     transition: all 0.5s;
+}
+input[type = 'button']:hover {
+    transform: scale(0.8);
 }
 #imagem-horizontal img {
     border-radius: 5px;
