@@ -40,8 +40,11 @@ input[type = 'button']:hover {
     background-color: #252525;
     transition: all 0.5s;
 }
+input[type = 'button']:active:hover {
+    transform: scale(0.9);
+}
 input[type = 'button']:active {
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 #imagem-horizontal img {
     border-radius: 5px;
