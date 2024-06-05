@@ -43,23 +43,34 @@ input[type = 'button']:hover {
 #imagem-horizontal img {
     border-radius: 5px;
 }
-
+/* Estilo para as imagens horizontais */
 .img-horizontal {
-    position: relative;
-    float: inline-end;
-    align-items: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    text-align: center;
 }
+
 .img-horizontal img {
-    margin-right: 10px;
     border-radius: 4px;
+    margin-left: 15px;
 }
-.img-horizontal h4 {
-    width: 200px;
-    color: #ffe790;
-}
+
 .img-horizontal .legenda-horizontal {
-    margin-bottom: 100px;    
+    border-radius: 4px;
+    color: #fff;
 }
+
+.img-horizontal .legenda-horizontal h4 {
+    max-width: 185px;
+    color: #ffe790;
+    margin-bottom: 5px;
+}
+
+.img-horizontal .legenda-horizontal h5 {
+    margin: 0;
+}
+
 .img-vertical {
     margin-bottom: -80px;
 }
@@ -132,4 +143,38 @@ input[type = 'button']:hover {
   h1 {
     font-weight: bolder;
   }
-  
+  .titulo-horizontal {
+    text-align: left;
+  }
+  .titulo-horizontal2 {
+    text-align: left;
+  }
+
+
+/* /* Estilo para as imagens horizontais */
+.img-horizontal2 {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.img-horizontal2 img {
+    border-radius: 4px;
+    margin-left: 15px;
+}
+
+.img-horizontal2 .legenda-horizontal2 {
+    border-radius: 4px;
+    color: #fff;
+}
+
+.img-horizontal2 .legenda-horizontal2 h4 {
+    max-width: 185px;
+    color: #ffe790;
+    margin-bottom: 5px;
+}
+
+.img-horizontal2 .legenda-horizontal2 h5 {
+    margin: 0;
+}

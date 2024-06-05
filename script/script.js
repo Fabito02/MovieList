@@ -37,3 +37,16 @@ if (n !== undefined) {
     }, intervalo);
     currentImg = n; // atualiza o índice da imagem atual
 }
+
+function copyText(id) {
+    var textToCopy = document.getElementById(id).innerText;
+
+    document.addEventListener('copy', function(e) {
+        e.clipboardData.setData('text/plain', textToCopy);
+        e.preventDefault();
+        console.log('Texto copiado com sucesso: ' + textToCopy);
+    });
+
+    document.execCommand('copy');
+}
+
