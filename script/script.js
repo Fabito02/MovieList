@@ -44,9 +44,26 @@ function copyText(id) {
     document.addEventListener('copy', function(e) {
         e.clipboardData.setData('text/plain', textToCopy);
         e.preventDefault();
-        console.log('Texto copiado com sucesso: ' + textToCopy);
     });
 
     document.execCommand('copy');
+
+    
 }
 
+var n = 0;
+document.querySelectorAll('.heart-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const amado = this.closest('.heart-container');
+        if (this.checked) {
+            n = n + 1;
+            console.log(`Você curtiu ${n} filmes`);
+        } else {
+            if (n > 0) {
+                n += 1;
+            }
+            n = n - 2;
+            console.log(`Você curtiu ${n} filmes`);
+        }
+    });
+});

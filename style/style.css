@@ -27,23 +27,24 @@ header {
     border-radius: 8px; 
     height: 30px;
 }
-input[type = 'button'] {
+input[type='button'] {
     background-color: #121212;
-    border-style: none;
+    border: none;
     border-radius: 5px;
     color: white;
     padding: 8px 10px;
     font-weight: bold;
-    transition: background-color 0.5s ease, transform 0.2
-        1s ease;
+    transition: background-color 0.5s, all 0.2s;
 }
-input[type = 'button']:hover {
+
+input[type='button']:hover {
     background-color: #252525;
-    transition: all 0.5s;
 }
-input[type = 'button']:active {
+
+input[type='button']:active {
     transform: scale(0.9);
 }
+
 #imagem-horizontal img {
     border-radius: 5px;
 }
@@ -83,7 +84,7 @@ input[type = 'button']:active {
 }
 .img-vertical .legenda-vertical {
     margin-left: 150px;
-    transform:translateY(-145px); 
+    transform:translateY(-169px); 
 }
 
 .titulo-vertical h1 {
@@ -181,4 +182,51 @@ input[type = 'button']:active {
 
 .img-horizontal2 .legenda-horizontal2 h5 {
     margin: 0;
+}
+
+
+.heart-checkbox {
+    display: none;
+}
+
+.heart-label {
+    cursor: pointer;
+    width: 10px;
+    height: 10px; 
+    display: inline-block;
+    background-color: transparent;
+    position: relative;
+    margin: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.heart-label::before,
+.heart-label::after {
+    content: "";
+    width: 10px; 
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    background: rgb(252, 252, 252);
+    border-radius: 10px 10px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    transition: background 0.3s, transform 0.3s ease-in-out;
+}
+
+.heart-label::after {
+    left: auto;
+    right: 5px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.heart-checkbox:checked + .heart-label {
+    transform: scale(1.2);
+}
+
+.heart-checkbox:checked + .heart-label::before,
+.heart-checkbox:checked + .heart-label::after {
+    background: red;
 }
