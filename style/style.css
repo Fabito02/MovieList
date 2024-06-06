@@ -87,10 +87,11 @@ input[type='text']:focus {
     max-width: 185px;
     color: #ffe790;
     margin-bottom: 5px;
+    transform: translateX(16px);
 }
 
 .img-horizontal .legenda-horizontal h5 {
-    margin: 0;
+    transform: translateX(8px);
 }
 
 .img-vertical {
@@ -179,29 +180,29 @@ input[type='text']:focus {
     vertical-align: top;
     margin-bottom: 20px;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .img-horizontal2 img {
     border-radius: 4px;
-    margin-left: 15px;
 }
 
 .img-horizontal2 .legenda-horizontal2 {
     border-radius: 4px;
     color: #fff;
+    width: 185px;
 }
 
 .img-horizontal2 .legenda-horizontal2 h4 {
-    max-width: 185px;
     color: #ffe790;
     margin-bottom: 5px;
+    text-align: center;
 }
 
-.img-horizontal2 .legenda-horizontal2 h5 {
-    margin: 0;
+.img-container {
+    height: 370px;
 }
-
-
 .heart-checkbox {
     display: none;
 }

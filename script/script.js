@@ -51,6 +51,62 @@ function copyText(id) {
     
 }
 
+
+function ampli01(){
+    let imagem = window.document.getElementById('img01');
+    imagem.style.width = '232px';
+    imagem.style.height= '332px'
+}
+
+function out01(){
+    let imagem = window.document.getElementById('img01');
+    imagem.style.width = '185px';
+    imagem.style.height = '265px'
+}
+
+function ampli02(){
+    let imagem = window.document.getElementById('img02');
+    imagem.style.width = '232px';
+    imagem.style.height= '332px'
+}
+
+function out02(){
+    let imagem = window.document.getElementById('img02');
+    imagem.style.width = '185px';
+    imagem.style.height = '265px';
+}
+
+function ampli03(){
+    let imagem = window.document.getElementById('img03');
+    imagem.style.width = '232px';
+    imagem.style.height= '332px'
+}
+
+function out03(){
+    let imagem = window.document.getElementById('img03');
+    imagem.style.width = '185px';
+    imagem.style.height = '265px';
+}
+
+function ampli04(){
+    let imagem = window.document.getElementById('img04');
+    imagem.style.width = '232px';
+    imagem.style.height= '332px'
+}
+
+function out04(){
+    let imagem = window.document.getElementById('img04');
+    imagem.style.width = '185px';
+    imagem.style.height = '265px';
+}
+
+function ampli05(){
+    let imagem = window.document.getElementById('img05');
+    imagem.style.width = '232px';
+    imagem.style.height= '332px'
+}
+
+
 var n = 0;
 document.querySelectorAll('.heart-checkbox').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
@@ -67,42 +123,24 @@ document.querySelectorAll('.heart-checkbox').forEach(checkbox => {
         }
     });
 });
+// Transitionend
 
-
-function drag(event, id) {
-    event.dataTransfer.setData("text/plain", id);
-}
-
-document.addEventListener("dragover", function(event) {
-    event.preventDefault();
+document.getElementById('search').addEventListener('focus', function() {
+    this.style.width = '250px'; // Largura quando a barra recebe foco
 });
 
-document.addEventListener("drop", function(event) {
-    event.preventDefault();
-    var data = event.dataTransfer.getData("text/plain");
-    var draggedElement = document.getElementById(data);
-    if (!draggedElement) return; // Check if the dragged element exists
-    var dropTarget = event.target.closest(".img-container");
-    if (dropTarget) {
-        var siblings = Array.from(dropTarget.querySelectorAll('.img-horizontal2'));
-        var currentIndex = siblings.indexOf(draggedElement);
-        var rect = dropTarget.getBoundingClientRect();
-        var x = event.clientX - rect.left;
-        
-        // Determine the new index
-        var newIndex = currentIndex;
-        for (var i = 0; i < siblings.length; i++) {
-            var siblingRect = siblings[i].getBoundingClientRect();
-            if (x < siblingRect.left + siblingRect.width / 2) {
-                newIndex = i;
-                break;
-            }
-        }
-        if (newIndex > currentIndex) {
-            newIndex++;
-        }
-        
-        // Insert element at new position
-        dropTarget.insertBefore(draggedElement, siblings[newIndex] || null);
+document.getElementById('search').addEventListener('blur', function() {
+    this.style.width = '180px'; // Largura quando o campo perde foco
+    this.style.transition = 'width 0.3s ease-in-out'; // Adiciona a transição
+});
+
+document.getElementById('search').addEventListener('transitionend', function(event) {
+    // propertyName é o nome da transicão que terminou (width) e tbm verifica o tamanho final se é 180px
+    if (event.propertyName === 'width' && this.style.width === '180px') {
+        this.value = ''; // Limpa o valor do input quando a transição de blur (quando a barra perde foco termina
     }
 });
+
+// Transitionstart
+
+
