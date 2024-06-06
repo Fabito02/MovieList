@@ -69,47 +69,40 @@ document.querySelectorAll('.heart-checkbox').forEach(checkbox => {
 });
 
 
+function drag(event, id) {
+    event.dataTransfer.setData("text/plain", id);
+}
 
-    document.querySelectorAll('.img-horizontal2').forEach(item => {
-        item.addEventListener('dragstart', event => {
-            drag(event, item.id);
-        });
-    });
+document.addEventListener("dragover", function(event) {
+    event.preventDefault();
+});
 
-    function drag(event, id) {
-        event.dataTransfer.setData("text/plain", id);
-    }
-
-    document.addEventListener("dragover", function(event) {
-        event.preventDefault();
-    });
-
-    document.addEventListener("drop", function(event) {
-        event.preventDefault();
-        var data = event.dataTransfer.getData("text/plain");
-        var draggedElement = document.getElementById(data);
-        if (!draggedElement) return; // Verifica se o elemento arrastado existe
-        var dropTarget = event.target.closest(".img-container");
-        if (dropTarget) {
-            var siblings = Array.from(dropTarget.querySelectorAll('.img-horizontal2'));
-            var currentIndex = siblings.indexOf(draggedElement);
-            var rect = dropTarget.getBoundingClientRect();
-            var x = event.clientX - rect.left;
-
-            // Determina o novo índice
-            var newIndex = currentIndex;
-            for (var i = 0; i < siblings.length; i++) {
-                var siblingRect = siblings[i].getBoundingClientRect();
-                if (x < siblingRect.left + siblingRect.width / 2) {
-                    newIndex = i;
-                    break;
-                }
+document.addEventListener("drop", function(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text/plain");
+    var draggedElement = document.getElementById(data);
+    if (!draggedElement) return; // Check if the dragged element exists
+    var dropTarget = event.target.closest(".img-container");
+    if (dropTarget) {
+        var siblings = Array.from(dropTarget.querySelectorAll('.img-horizontal2'));
+        var currentIndex = siblings.indexOf(draggedElement);
+        var rect = dropTarget.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        
+        // Determine the new index
+        var newIndex = currentIndex;
+        for (var i = 0; i < siblings.length; i++) {
+            var siblingRect = siblings[i].getBoundingClientRect();
+            if (x < siblingRect.left + siblingRect.width / 2) {
+                newIndex = i;
+                break;
             }
-            if (newIndex > currentIndex) {
-                newIndex++;
-            }
-
-            // Insere o elemento na nova posição
-            dropTarget.insertBefore(draggedElement, siblings[newIndex] || null);
         }
-    });
+        if (newIndex > currentIndex) {
+            newIndex++;
+        }
+        
+        // Insert element at new position
+        dropTarget.insertBefore(draggedElement, siblings[newIndex] || null);
+    }
+});

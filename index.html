@@ -18,6 +18,7 @@
         <input type="button" value="Catálogo">
         <input type="button" value="Meus filmes">
     </div>
+        <input type="text" placeholder="Pesquisar">
         <div class="bt-right">
         <input type="button" value="Entrar">
         <input type="button" value="Criar conta">
@@ -61,15 +62,15 @@
             <div class="filmes-horizontais">
                 
 <div class="titulo-horizontal2">
-        <h1 style="color: #ffd439; padding: 20px;">Os mais populares da semana</h1>
+        <h1 style="color: #ffd439; padding: 20px;">Meus Favoritos</h1>
     </div>
     <br><br>
-    <div class="container" >
+    <div class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="img-container">
-            <div class="img-horizontal2" id="imagem1" draggable="true" ondragstart="drag(event, 'imagem1')">
+            <div class="img-horizontal2" id="imagem1" draggable="true" ondragstart="drag(event, 'imagem1')" >
                 <img src="imagens/close.jpg" alt="Visual do filme 'Close'" width="185" height="265">
                 <div class="legenda-horizontal2">
-                    <h4>Close</h4>
+                    <h4 id="leg01">Close</h4>
                 </div>
             </div>
     
@@ -98,22 +99,22 @@
 
 
                 <div clas="titulo-horizontal">
-                    <h1 style="color: #ffd439; padding: 20px;">As maiores bilheterias</h1>
+                    <h1 style="color: #ffd439; padding: 20px;">As Maiores Bilheterias</h1>
                 </div><br><br>
 
 
                 <div class="img-horizontal">
-                    <img src="imagens/img-7.jpg" alt="Visual do filme 'Avatar(2009)'" width="185" height="265">
+                    <img src="imagens/img-7.jpg" alt="Visual do filme 'Avatar(2009)'" width="185" height="265" id="img01">
                     <div class="legenda-horizontal">
-                        <h4 id="t6">Avatar</h4> <br>
-                        <h5>Lançamento: 2009</h5><br>
-                        <h5>Bilheteria: 2.923.706.026</h5><br>
+                        <h4 id="t6" class="leg01">Avatar</h4> <br>
+                        <h5 class="leg01">Lançamento: 2009</h5><br>
+                        <h5 class="leg01">Bilheteria: 2.923.706.026</h5><br>
                         <input type="button" value="Copiar Título" onclick="copyText('t6')">
                     </div>
                 </div>
     
                 <div class="img-horizontal">
-                    <img src="imagens/img-8.jpg" alt="Visual do filme 'Vingadores: Ultimato'" width="185" height="265">
+                    <img src="imagens/img-8.jpg" alt="Visual do filme 'Vingadores: Ultimato'" width="185" height="265" id="img02">
                     <div class="legenda-horizontal">
                         <h4 id="t5">Vingadores: Ultimato</h4><br>
                         <h5>Lançamento: 2019</h5><br>
@@ -123,7 +124,7 @@
                 </div>
     
                 <div class="img-horizontal">
-                    <img src="imagens/img-9.jpg" alt="Visual do filme 'Avatar: O Caminho da Água'"  width="185" height="265">
+                    <img src="imagens/img-9.jpg" alt="Visual do filme 'Avatar: O Caminho da Água'"  width="185" height="265" id="img03">
                     <div class="legenda-horizontal">
                         <h4 id="t4">Avatar: O Caminho da Água</h4><br>
                         <h5>Lançamento: 2022</h5><br>
@@ -134,7 +135,7 @@
     
                 <div class="img-horizontal">
                     <img src="imagens/img-10.jpg" alt="Visual do filme 'Titanic'" width="185" height="265">
-                    <div class="legenda-horizontal">
+                    <div class="legenda-horizontal" id="img04">
                         <h4 id="t3">Titanic</h4><br>
                         <h5>Lançamento: 1997</h5><br>
                         <h5>Bilheteria: 2.264.743.305</h5><br>
@@ -143,7 +144,7 @@
                 </div>
     
                 <div class="img-horizontal">
-                    <img src="imagens/img-11.jpg" alt="Visual do filme 'Star Wars: O Despertar da Força'"  width="185" height="265">
+                    <img src="imagens/img-11.jpg" alt="Visual do filme 'Star Wars: O Despertar da Força'"  width="185" height="265"id=img05>
                     <div class="legenda-horizontal">
                         <h4 id="t2">Star Wars: O Despertar da Força</h4><br>
                         <h5>Lançamento: 2015</h5><br>
@@ -153,7 +154,7 @@
                 </div>
     
                 <div class="img-horizontal">
-                    <img src="imagens/img-12.jpg" alt="Visual do filme 'Vingadores: Guerra Infinita'"  width="185" height="265">
+                    <img src="imagens/img-12.jpg" alt="Visual do filme 'Vingadores: Guerra Infinita'"  width="185" height="265" id="img06">
                     <div class="legenda-horizontal">
                         <h4 id="t1">Vingadores: Guerra Infinita</h4><br>
                         <h5>Lançamento: 2018</h5><br>
@@ -343,4 +344,3 @@
     <script src="script/script.js"></script>
 </body>
 </html>
-
