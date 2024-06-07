@@ -66,30 +66,30 @@
     </div>
     <br><br>
     <div class="container">
-        <div class="img-container" ondrop="drop(event)" ondragover="allowDrop(event)" onmouseout="out01()">
-            <div class="img-horizontal2" id="imagem1" draggable="true" ondragstart="drag(event, 'imagem1')">
-                <img src="imagens/close.jpg" alt="Visual do filme 'Close'" width="185" height="265" id="img01" onmouseover="ampli01()" onmouseout="out01()">
+        <div class="img-container" ondrop="drop(event)" ondragover="allowDrop(event)" onmouseout="limparTudo()">
+            <div class="img-horizontal2" id="imagem1" draggable="true" ondragstart="drag(event, 'img01')">
+                <img src="imagens/close.jpg" alt="Visual do filme 'Close'" class="image" id="img01" onmouseover="ampliarImagem('img01', 'leg1')" onmouseout="restaurarImagem('img01', 'leg1')">
                 <div class="legenda-horizontal2">
                     <h4 id="leg1">Close</h4>
                 </div>
             </div>
     
-            <div class="img-horizontal2" id="imagem2" draggable="true" ondragstart="drag(event, 'imagem2')">
-                <img src="imagens/garfield.jpg" alt="Visual do filme 'Garfield: Fora de Casa'" width="185" height="265" id="img02" onmouseover="ampli02()" onmouseout="out02()">
+            <div class="img-horizontal2" id="imagem2" draggable="true" ondragstart="drag(event, 'img02')">
+                <img src="imagens/garfield.jpg" alt="Visual do filme 'Garfield: Fora de Casa'" class="image" id="img02" onmouseover="ampliarImagem('img02', 'leg2')" onmouseout="restaurarImagem('img02', 'leg2')">
                 <div class="legenda-horizontal2">
                     <h4 id="leg2">Garfield: Fora de Casa</h4>
                 </div>
             </div>
     
-            <div class="img-horizontal2" id="imagem3" draggable="true" ondragstart="drag(event, 'imagem3')">
-                <img src="imagens/godkong.jpg" alt="Visual do filme 'Godzilla e Kong: O Novo Império'" width="185" height="265" id="img03" onmouseover="ampli03()" onmouseout="out03()">
+            <div class="img-horizontal2" id="imagem3" draggable="true" ondragstart="drag(event, 'img03')">
+                <img src="imagens/godkong.jpg" alt="Visual do filme 'Godzilla e Kong: O Novo Império'" class="image" id="img03" onmouseover="ampliarImagem('img03', 'leg3')" onmouseout="restaurarImagem('img03', 'leg3')">
                 <div class="legenda-horizontal2">
                     <h4 id="leg3">Godzilla e Kong: O Novo Império</h4>
                 </div>
             </div>
     
-            <div class="img-horizontal2" id="imagem4" draggable="true" ondragstart="drag(event, 'imagem4')">
-                <img src="imagens/duna.jpg" alt="Visual do filme 'Duna 2'" width="185" height="265" id="img04" onmouseover="ampli04()" onmouseout="out04()">
+            <div class="img-horizontal2" id="imagem4" draggable="true" ondragstart="drag(event, 'img04')">
+                <img src="imagens/duna.jpg" alt="Visual do filme 'Duna 2'" class="image" id="img04" onmouseover="ampliarImagem('img04', 'leg4')" onmouseout="restaurarImagem('img04', 'leg4')">
                 <div class="legenda-horizontal2">
                     <h4 id="leg4">Duna 2</h4>
                 </div>
@@ -102,7 +102,7 @@
                     <h1 style="color: #ffd439; padding: 20px;">As Maiores Bilheterias</h1>
                 </div><br><br>
 
-
+                <div class="img-container2">
                 <div class="img-horizontal">
                     <img src="imagens/img-7.jpg" alt="Visual do filme 'Avatar(2009)'" width="185" height="265" id="img01">
                     <div class="legenda-horizontal">
@@ -164,6 +164,7 @@
                 </div>
             
                 </div>
+            </div>
 
             <div class="img-vertical">
 

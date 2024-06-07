@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', function() {
+        restaurarImagem('img01', 'leg1');
+        restaurarImagem('img02', 'leg2');
+        restaurarImagem('img03', 'leg3');
+        restaurarImagem('img04', 'leg4');
+});
+
+  
   //Slider
    
 // Seleciona todas as imagens do slider e todos os pontos (dots)
@@ -52,61 +60,6 @@ function copyText(id) {
 }
 
 
-function ampli01(){
-    let imagem = window.document.getElementById('img01');
-    imagem.style.width = '232px';
-    imagem.style.height= '332px'
-}
-
-function out01(){
-    let imagem = window.document.getElementById('img01');
-    imagem.style.width = '185px';
-    imagem.style.height = '265px'
-}
-
-function ampli02(){
-    let imagem = window.document.getElementById('img02');
-    imagem.style.width = '232px';
-    imagem.style.height= '332px'
-}
-
-function out02(){
-    let imagem = window.document.getElementById('img02');
-    imagem.style.width = '185px';
-    imagem.style.height = '265px';
-}
-
-function ampli03(){
-    let imagem = window.document.getElementById('img03');
-    imagem.style.width = '232px';
-    imagem.style.height= '332px'
-}
-
-function out03(){
-    let imagem = window.document.getElementById('img03');
-    imagem.style.width = '185px';
-    imagem.style.height = '265px';
-}
-
-function ampli04(){
-    let imagem = window.document.getElementById('img04');
-    imagem.style.width = '232px';
-    imagem.style.height= '332px'
-}
-
-function out04(){
-    let imagem = window.document.getElementById('img04');
-    imagem.style.width = '185px';
-    imagem.style.height = '265px';
-}
-
-function ampli05(){
-    let imagem = window.document.getElementById('img05');
-    imagem.style.width = '232px';
-    imagem.style.height= '332px'
-}
-
-
 var n = 0;
 document.querySelectorAll('.heart-checkbox').forEach(checkbox => {
     checkbox.addEventListener('change', function() {
@@ -134,7 +87,7 @@ document.getElementById('search').addEventListener('blur', function() {
     this.style.transition = 'width 0.3s ease-in-out'; // Adiciona a transição
 });
 
-document.getElementById('search').addEventListener('transitionend', function(event) {
+document.getElementById('search').addEventListener('transitionstart', function(event) {
     // propertyName é o nome da transicão que terminou (width) e tbm verifica o tamanho final se é 180px
     if (event.propertyName === 'width' && this.style.width === '180px') {
         this.value = ''; // Limpa o valor do input quando a transição de blur (quando a barra perde foco termina
@@ -143,4 +96,38 @@ document.getElementById('search').addEventListener('transitionend', function(eve
 
 // Transitionstart
 
+
+function ampliarImagem(id, legId) {
+    let imagem = document.getElementById(id);
+    let legenda = document.getElementById(legId);
+    imagem.addEventListener('transitionend', function(event) {
+        if (event.propertyName === 'width' && imagem.style.width === '232px') {
+            legenda.style.opacity = '1';
+            legenda.style.transition = 'opacity 0.3s';
+        }
+    });
+    
+    // Aplica as alterações de estilo para ampliar a imagem
+    imagem.style.width = '232px';
+    imagem.style.height = '332px';
+    imagem.style.filter = 'blur(2px) brightness(60%)';
+}
+
+function restaurarImagem(id, legId) {
+    let imagem = document.getElementById(id);
+    let legenda = document.getElementById(legId);
+    
+    // Aplica as alterações de estilo para restaurar a imagem
+    imagem.style.width = '185px';
+    imagem.style.height = '265px';
+    legenda.style.opacity = '0'; // Oculta a legenda ao restaurar a imagem
+    imagem.style.filter = 'unset';
+}
+
+function limparTudo() {
+    restaurarImagem('img01', 'leg1');
+    restaurarImagem('img02', 'leg2');
+    restaurarImagem('img03', 'leg3');
+    restaurarImagem('img04', 'leg4');
+}
 
